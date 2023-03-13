@@ -1,9 +1,8 @@
-import React from "react"
-import backg from '@/assets/images/backg.jfif'
+import React from "react";
+import backg from "../../../../../assets/images/header/head-acground.png";
 
-export const Header = () =>{
+import classes from "./Header.scss?inline";
 
-    return <div>
-        <image src={backg}/>
-    </div>
-}
+export const Header: React.FC = () => {
+  return <div className={classes.header}>Wednesday</div>;
+};
