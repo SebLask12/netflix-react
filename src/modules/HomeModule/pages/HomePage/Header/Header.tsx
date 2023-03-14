@@ -1,8 +1,44 @@
 import React from "react";
-import backg from "../../../../../assets/images/header/head-acground.png";
 
-import classes from "./Header.scss?inline";
+import Navbar from "./Navbar";
+import classes from "./Header.module.scss";
+import MovieTitle from "../../../../../assets/images/header/Wednesday.png";
+import PlayIcon from "../../../../../assets/images/header/Vector.svg";
 
 export const Header: React.FC = () => {
-  return <div className={classes.header}>Wednesday</div>;
+  return (
+    <div className={classes.header}>
+      <Navbar />
+      <div className={classes.headerContent}>
+        <div className={classes.headerContent__heading}>
+          <div className={classes.headerContent__heading__icon}>
+            <span style={{ fontSize: `10px` }}>TOP</span>10
+          </div>
+          <span className={classes.headerContent__heading__title}>
+            Nr 5 wśród seriali dzisiaj
+          </span>
+        </div>
+        <img
+          className={classes.headerContent__movieTitle}
+          src={MovieTitle}
+          alt=""
+        />
+        <div className={classes.headerContent__description}>
+          Makabrycznie bystra i sarkastyczna Wednesday Addams prowadzi śledztwo
+          w sprawie serii zabójstw, przysparzając sobie nowych przyjaciół i
+          wrogów w Akademii Nevermore.
+        </div>
+        <div className={classes.headerContent_buttons}>
+        <button className={classes.headerContent__button}>
+          <img src={PlayIcon} alt="" />
+          <span>Odtwórz</span>
+        </button>
+        <button className={classes.headerContent__buttonBlurr}>
+          <img src={PlayIcon} alt="" />
+          <span>Odtwórz</span>
+        </button>
+      </div>
+      </div>
+    </div>
+  );
 };

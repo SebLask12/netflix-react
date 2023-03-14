@@ -13,7 +13,18 @@ const resolve = {
 // https://vitejs.dev/config/
 export default defineConfig({
   css: {
-    devSourcemap: true,
+    modules: {
+      scopeBehaviour: "local", // or "global"
+      localsConvention: "camelCase", // or "dashes"
+    },
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/global-styles/variables.scss";
+        `,
+      },
+    },
+    postcss: {},
   },
   plugins: [react(), eslint()],
   resolve,
