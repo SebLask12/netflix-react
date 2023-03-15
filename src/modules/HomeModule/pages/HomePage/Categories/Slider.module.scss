@@ -1,0 +1,52 @@
+.slider {
+    position: relative;
+    width: 1440px;
+    height: 220px;
+    overflow: hidden;
+}
+
+.sliderTitle {
+
+    position: absolute;
+    width: 291px;
+    height: 24px;
+    left: 56px;
+    top: 0px;
+
+    // font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    /* identical to box height, or 24px */
+
+    letter-spacing: -0.01em;
+
+    color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    position: absolute;
+    width: 1576px;
+    height: 164px;
+    left: 56px;
+    top: 56px;
+}
+
+.arrow {
+    &__right {
+        position: absolute;
+        width: 200px;
+        height: 164px;
+        left: 1240px;
+        top: 56px;
+
+        background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
