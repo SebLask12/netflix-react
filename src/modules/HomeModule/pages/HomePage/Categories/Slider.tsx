@@ -19,7 +19,7 @@ type Image = {
   alt: string;
 };
 
-const images: Image[] = [
+const images1: Image[] = [
   { id: 1, src: Image1, alt: "Breaking Bad" },
   { id: 2, src: Image2, alt: "Walking Dead" },
   { id: 3, src: Image3, alt: "Vikings" },
@@ -38,6 +38,7 @@ type Props = {
 
 const Slider: React.FC<Props> = (props) => {
   const [position, setPosition] = useState(0);
+  const [images, setImages] = useState(images1);
   const [slided, setSlided] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -46,8 +47,14 @@ const Slider: React.FC<Props> = (props) => {
     if (!slided) {
       setSlided(true);
     }
+
+    setImages((prevState) => {
+      const slice = [prevState.pop()];
+      return slice.concat(prevState);
+    });
+
     if (containerRef.current !== null) {
-      setPosition(position + 256);
+      setPosition(position - 256);
       console.log(containerRef.current.offsetWidth);
       if (
         position ===
@@ -59,11 +66,8 @@ const Slider: React.FC<Props> = (props) => {
   };
 
   const handlePrevSlide = () => {
-    if (!slided) {
-      setSlided(true);
-    }
     if (containerRef.current !== null) {
-      setPosition(position - 256);
+      setPosition(position + 256);
       console.log(containerRef.current.offsetWidth);
       if (
         position ===
@@ -92,35 +96,35 @@ const Slider: React.FC<Props> = (props) => {
             alt={image.alt}
           />
         ))}
+      </div>
+      <button
+        className={`${classes.arrow} ${classes.arrowRight}`}
+        onClick={handleNextSlide}
+      >
+        <span className={classes.arrow__circle}>
+          <img
+            className={classes.arrow__circleArrow}
+            src={ArrowRight}
+          />
+        </span>
+      </button>
+      {slided && (
         <button
-          className={`${classes.arrow} ${classes.arrowRight}`}
-          onClick={handleNextSlide}
-          style={{ transform: `translateX(${-position}px)` }}
+          className={`${classes.arrow} ${classes.arrowLeft}`}
+          onClick={handlePrevSlide}
         >
-          <span className={classes.arrow__circle}>
+          <span
+            className={classes.arrow__circle}
+            style={{ left: "0" }}
+          >
             <img
               className={classes.arrow__circleArrow}
               src={ArrowRight}
+              style={{ rotate: "180deg" }}
             />
           </span>
         </button>
-        {slided && (
-          <button
-          className={`${classes.arrow} ${classes.arrowLeft}`}
-          onClick={handlePrevSlide}
-          style={{ transform: `translateX(${-position}px)` }}
-        >
-          <span className={classes.arrow__circle} style={{left: '0'}}>
-            <img
-              className={classes.arrow__circleArrow}
-                src={ArrowRight}
-                style={{rotate: '180deg'}}
-            />
-          </span>
-        </button>
-          )}
-        
-      </div>
+      )}
     </div>
   );
 };
