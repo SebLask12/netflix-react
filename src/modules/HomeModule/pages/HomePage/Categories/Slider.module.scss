@@ -47,7 +47,7 @@
   bottom: 0;
   border: 0;
 
-  margin: auto;
+  // margin: auto;
 
   display: flex;
       // left: 116px;
@@ -61,6 +61,7 @@
     position: absolute;
     right: 0;
     background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    justify-content: end;
   }
 
   &Left {
@@ -77,8 +78,8 @@
     height: 48px;
     // left: 116px;
     // top: 58px;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
 
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4.8px);

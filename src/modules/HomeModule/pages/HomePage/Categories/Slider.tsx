@@ -4,14 +4,14 @@ import MovieItem from "@/global-components/MovieItem";
 
 import classes from "./Slider.module.scss";
 
-import Image1 from "../../../../../assets/images/section1/1.png";
-import Image2 from "../../../../../assets/images/section1/2.png";
-import Image3 from "../../../../../assets/images/section1/3.png";
-import Image4 from "../../../../../assets/images/section1/4.png";
-import Image5 from "../../../../../assets/images/section1/5.png";
-import Image6 from "../../../../../assets/images/section1/6.png";
+import Image1 from "@/assets/images/section1/1.png";
+import Image2 from "@/assets/images/section1/2.png";
+import Image3 from "@/assets/images/section1/3.png";
+import Image4 from "@/assets/images/section1/4.png";
+import Image5 from "@/assets/images/section1/5.png";
+import Image6 from "@/assets/images/section1/6.png";
 
-import ArrowRight from "../../../../../assets/images/arrow-down.svg";
+import ArrowRight from "@/assets/images/arrow-down.svg";
 
 type Image = {
   id: number;
@@ -53,7 +53,7 @@ const initialState: State = {
   position: 0,
   images: images1,
   slided: false,
-  index: 1,
+  index: 0,
   isDragging: false,
   dragStart: 0,
   dragDistance: 0,
@@ -62,23 +62,24 @@ const initialState: State = {
 const sliderReducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "nextSlide":
+      
       return {
         ...state,
         // position: state.position - 256,
-        position: state.index * -256,
+        position: (state.index+1) * -256,
         slided: true,
         // images: [...state.images, state.images[state.index]!],
         images: [...state.images, state.images[state.index]],
         index: state.index === state.images.length - 1 ? 0 : state.index + 1,
       };
     case "prevSlide": {
-      const img = state.images.slice(1);
+      const img = state.images.slice(0,state.images.length - 1);
       return {
         ...state,
         // position: state.position + 256,
         position: state.index * -256,
         // images: [state.images[state.images.length-state.index]!, ...state.images],
-        images: img,
+        images: [state.images[state.images.length-1], ...img],
         index: state.index === 0 ? state.images.length - 1 : state.index - 1,
       };
     }
@@ -184,24 +185,33 @@ const Slider: React.FC<Props> = ({ title }) => {
         style={containerStyle}
       >
         {state.images.map((image, i) => (
-          <MovieItem key={i} src={image.src} alt={image.alt} />
+          <MovieItem
+            key={i}
+            src={image.src}
+            alt={image.alt}
+          />
         ))}
       </div>
       <button
         className={`${classes.arrow} ${classes.arrowRight}`}
         onClick={handleNextSlide}
       >
-        <span className={classes.arrow__circle}>
-          <img className={classes.arrow__circleArrow} src={ArrowRight} />
+        <span className={classes.arrow__circle} style={{marginRight: '58px'}}>
+          <img
+            className={classes.arrow__circleArrow}
+            src={ArrowRight}
+          />
         </span>
       </button>
       {state.slided && (
         <button
           className={`${classes.arrow} ${classes.arrowLeft}`}
           onClick={handlePrevSlide}
-          
         >
-          <span className={classes.arrow__circle} style={{ marginLeft: "58px" }}>
+          <span
+            className={classes.arrow__circle}
+            style={{ marginLeft: "58px" }}
+          >
             <img
               className={classes.arrow__circleArrow}
               src={ArrowRight}
