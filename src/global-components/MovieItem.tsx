@@ -8,9 +8,9 @@ type AvatarProps = {
 
 const MovieItem: React.FC<AvatarProps> = ({ src, alt }) => {
   return (
-    <a href="#">
-      <img className={classes.movieItem} src={src} alt={alt} />
-    </a>
+    <div draggable="false">
+      <img className={classes.movieItem} src={src} alt={alt} draggable="false"/>
+    </div>
   );
 };
 
