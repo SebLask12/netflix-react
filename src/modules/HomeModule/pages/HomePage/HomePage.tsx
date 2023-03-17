@@ -4,6 +4,7 @@ import "./HomePage.scss";
 import { Header } from "./Header/Header";
 
 import Section from "./Categories/Section";
+import Cos from "./cos";
 
 interface IProps {
   msg: string;

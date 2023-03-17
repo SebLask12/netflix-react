@@ -1,15 +1,18 @@
 import React from "react";
 
-import Slider from "./Slider";
+import Swipe from "./Swiper";
 
 import classes from "./Section.module.scss";
 
-const Section = () => {
+const Section: React.FC = () => {
+  const titleFirst = "Docenione przez krytyków";
+  const titleSecond = "Popularne teraz";
+  const titleThird = "Obejrzyj ponownie";
   return (
     <div className={classes.section1}>
-      <Slider title={'Docenione przez krytyków'}/>
-      <Slider title={'Popularne teraz'}/>
-      <Slider title={'Obejrzyj ponownie'}/>
+      <Swipe title={titleFirst}/>
+      <Swipe title={titleSecond}/>
+      <Swipe title={titleThird}/>
     </div>
   );
 };

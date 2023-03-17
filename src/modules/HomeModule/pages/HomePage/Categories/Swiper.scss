@@ -1,0 +1,48 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  h3 {
+    width: 291px;
+    height: 24px;
+
+    // font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    /* identical to box height, or 24px */
+
+    letter-spacing: -0.01em;
+
+    color: #ffffff;
+  }
+}
+
+.displayAll {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 256px;
+  height: 164px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}

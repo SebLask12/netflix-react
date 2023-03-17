@@ -1,0 +1,54 @@
+.buttonContainer {
+  width: 200px;
+  height: 164px;
+  bottom: 0;
+  border: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+
+  transition: transform 1s ease-in-out;
+
+  &__right {
+    position: absolute;
+    right: 0;
+    background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    justify-content: end;
+  }
+
+  &__left {
+    position: absolute;
+    left: 0;
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+
+  }
+
+.content {
+    display: flex;
+    width: 48px;
+    height: 48px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4.8px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 532.8px;
+
+    &__arrow {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 16px;
+      top: 16px;
+
+      &--left{
+        rotate: 180deg;
+      }
+
+      &--right{
+        rotate: 0;
+      }
+    }
+  }
+}

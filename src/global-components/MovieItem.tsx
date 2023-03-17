@@ -14,7 +14,7 @@ const MovieItem: React.FC<AvatarProps> = ({ src, alt }) => {
   };
 
   return (
-    <div draggable="false">
+    <div>
       <img
         className={classes.movieItem}
         src={src}
