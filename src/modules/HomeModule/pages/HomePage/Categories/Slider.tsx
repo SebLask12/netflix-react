@@ -1,7 +1,6 @@
 import React, { useRef, useReducer, useEffect } from "react";
 
 import MovieItem from "@/global-components/MovieItem";
-import Carousel from "react-responsive-carousel/lib/ts/components/Carousel";
 
 import classes from "./Slider.module.scss";
 

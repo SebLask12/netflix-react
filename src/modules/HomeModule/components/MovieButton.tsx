@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./MovieButton.scss";
-import Arrow from "@/assets/images/arrow-down.svg";
+import Arrow from "@/assets/images/arrow.svg";
 
 type Props = {
   opposite: string,

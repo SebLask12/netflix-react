@@ -1,0 +1,30 @@
+.container {
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+  z-index: -1;
+
+  &__bottomPanel {
+    height: 119px;
+    width: 100%;
+    background: #1A1A1A;
+    box-shadow: 16px 16px 24px rgba(0, 0, 0, 0.32);
+    border-radius: 0 0 16px 16px;
+    transform: translateY(-10px);
+  }
+}
+
+.movieItem {
+  width: 256px;
+  height: 164px;
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  transition: transform 0.5s ease-in-out;
+
+  //     &:hover {
+  //         transform: scale(1.4);
+  //         z-index: 1000;
+  //     }
+ 
+}

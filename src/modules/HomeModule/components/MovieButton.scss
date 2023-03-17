@@ -13,6 +13,7 @@
   &__right {
     position: absolute;
     right: 0;
+    padding-right: 36px;
     background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     justify-content: end;
   }
@@ -20,6 +21,7 @@
   &__left {
     position: absolute;
     left: 0;
+    padding-left: 36px;
     background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
   }

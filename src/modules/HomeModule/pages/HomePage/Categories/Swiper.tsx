@@ -6,8 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
 import "./Swiper.scss";
 
-import MovieItem from "@/global-components/MovieItem";
-import ButtonMovie from "@/global-components/MovieButton";
+import MovieItem from "@/modules/HomeModule/components/MovieItem";
+import ButtonMovie from "@/modules/HomeModule/components/MovieButton";
 
 import Image1 from "@/assets/images/section1/1.png";
 import Image2 from "@/assets/images/section1/2.png";
