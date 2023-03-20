@@ -1,30 +1,44 @@
 .container {
-  transition: transform 0.5s ease-in-out;
-  position: relative;
-  z-index: -1;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
 
   &__bottomPanel {
+    position: relative;
+    display: flex;
+    flex-direction: row;
     height: 119px;
     width: 100%;
-    background: #1A1A1A;
+    background: #1a1a1a;
     box-shadow: 16px 16px 24px rgba(0, 0, 0, 0.32);
     border-radius: 0 0 16px 16px;
-    transform: translateY(-10px);
+    transform: translateY(-119px);
+    // padding-top: 16px;
+
+    transition: all 0.5s ease-in-out;
   }
 }
 
-.movieItem {
+.image {
   width: 256px;
   height: 164px;
-
+  z-index: 10;
   background: #ffffff;
   border-radius: 16px;
+  position: relative;
 
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
 
-  //     &:hover {
-  //         transform: scale(1.4);
-  //         z-index: 1000;
-  //     }
- 
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  // position: absolute;
+  // width: 112px;
+  // height: 32px;
+  // left: 16px;
+  // top: 207px;
 }

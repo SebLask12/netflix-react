@@ -1,0 +1,10 @@
+.circle {
+    display: flex;
+    width: 48px;
+    height: 48px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4.8px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 532.8px;
+}

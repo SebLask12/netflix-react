@@ -3,6 +3,8 @@ import React from "react";
 import "./MovieButton.scss";
 import Arrow from "@/assets/images/arrow.svg";
 
+import CircleShape from "./CircleShape";
+
 type Props = {
   opposite: string,
   onClick: () => void,
@@ -15,12 +17,7 @@ const ButtonMovie: React.FC<Props> = ({opposite, onClick}) => {
       className={`buttonContainer buttonContainer__${opposite}`}
       onClick={onClick}
     >
-      <span className={`content`}>
-        <img
-          className={`content__arrow content__arrow--${opposite}`}
-          src={Arrow}
-        />
-      </span>
+      <CircleShape img={Arrow}/>
     </button>
   );
 };
