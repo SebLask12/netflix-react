@@ -1,21 +1,32 @@
 .container {
   transition: all 0.5s ease-in-out;
-  position: absolute;
+  position: relative;
 
   &__bottomPanel {
-    position: relative;
-    display: flex;
-    flex-direction: row;
     height: 119px;
+    // visibility: hidden;
+    opacity: 0;
     width: 100%;
     background: #1a1a1a;
     box-shadow: 16px 16px 24px rgba(0, 0, 0, 0.32);
     border-radius: 0 0 16px 16px;
-    transform: translateY(-119px);
-    // padding-top: 16px;
 
     transition: all 0.5s ease-in-out;
   }
+
+  // &__bottomPanelHover {
+  //   display: flex;
+  //   visibility: hidden;
+  //   flex-direction: row;
+  //   height: 119px;
+  //   width: 100%;
+  //   background: #1a1a1a;
+  //   box-shadow: 16px 16px 24px rgba(0, 0, 0, 0.32);
+  //   border-radius: 0 0 16px 16px;
+  //   transform: translateY(-119px);
+
+  //   transition: all 0.5s ease-in-out;
+  // }
 }
 
 .image {
@@ -24,9 +35,13 @@
   z-index: 10;
   background: #ffffff;
   border-radius: 16px;
-  position: relative;
-
   transition: all 0.5s ease-in-out;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px 0 16px;
 }
 
 .menu {
@@ -35,10 +50,51 @@
   align-items: flex-start;
   padding: 0px;
   gap: 8px;
+}
 
-  // position: absolute;
-  // width: 112px;
-  // height: 32px;
-  // left: 16px;
-  // top: 207px;
+.titleMovie {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+}
+
+.time {
+  height: 14px;
+
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  /* or 14px */
+
+  letter-spacing: -0.01em;
+
+  color: #767676;
+}
+
+.progressBar {
+  display: block;
+  width: 328px;
+  height: 3px;
+
+  margin: 12px 16px 0 16px;
+
+  background: #353535;
+  border-radius: 444px;
+}
+
+.progress {
+  width: 140px;
+  display: block;
+  height: 3px;
+
+  // margin: 12px 16px 0 16px;
+
+  background: #DE4129;
+  border-radius: 444px;
+
 }

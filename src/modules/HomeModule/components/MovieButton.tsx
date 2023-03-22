@@ -6,18 +6,23 @@ import Arrow from "@/assets/images/arrow.svg";
 import CircleShape from "./CircleShape";
 
 type Props = {
-  opposite: string,
-  onClick: () => void,
-}
+  opposite: string;
+  onClick: () => void;
+};
 
-const ButtonMovie: React.FC<Props> = ({opposite, onClick}) => {
-  // const swiperRef = useRef<SwiperCore>(); 
+const ButtonMovie: React.FC<Props> = ({ opposite, onClick }) => {
+  // const swiperRef = useRef<SwiperCore>();
+  let rotate;
+  if (opposite === "left") {
+    rotate = 180;
+  }
+
   return (
     <button
       className={`buttonContainer buttonContainer__${opposite}`}
       onClick={onClick}
     >
-      <CircleShape img={Arrow}/>
+      <CircleShape img={Arrow} bgColor="" rotate={rotate} />
     </button>
   );
 };

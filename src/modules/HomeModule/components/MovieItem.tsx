@@ -17,13 +17,15 @@ const MovieItem: React.FC<AvatarProps> = ({ src, alt }) => {
   const [mouseOn, setMouseOn] = useState(false);
 
   const styleContainter = {
-    transform: `scale(1.4)`,
     zIndex: 20,
   };
 
   const styleBottomPanel = {
-    transform: `translateY(0)`,
+    // visibility: 'visible',
+    opacity: "1",
   };
+
+  const bottomStyle = "Active";
 
   const mouseEneterHandler = () => {
     setMouseOn(true);
@@ -46,19 +48,25 @@ const MovieItem: React.FC<AvatarProps> = ({ src, alt }) => {
         style={mouseOn ? { borderRadius: `16px 16px 0 0` } : undefined}
       />
       <div
-        className={classes.container__bottomPanel}
-        style={mouseOn ? styleBottomPanel : undefined}
+        className={`${classes.container__bottomPanel}${
+          mouseOn ? bottomStyle : ""
+        }`}
       >
-        <div className={classes.menu}>
-        <CircleShape img={Play}/>
-        <CircleShape img={Plus}/>
-        <CircleShape img={Like}/>
+        <div className={classes.menuContainer}>
+          <div className={`${classes.menu}`}>
+            <CircleShape img={Play} bgColor="white" />
+            <CircleShape img={Plus} />
+            <CircleShape img={Like} />
+          </div>
+          <CircleShape img={Arrow} rotate={90} />
         </div>
-        
-        <CircleShape img={Arrow}/>
-        <span></span>
-        <span></span>
-        <div></div>
+        <div className={classes.menuContainer}>
+          <div className={classes.titleMovie}>W róg</div>
+          <div className={classes.time}>24 z 58 min</div>
+        </div>
+        <span className={classes.progressBar}>
+          <span className={classes.progress}></span>
+        </span>
       </div>
     </div>
   );
