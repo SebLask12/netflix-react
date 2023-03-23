@@ -1,19 +1,26 @@
-.header {
+.headerContainer {
+  position: absolute;
   width: 100%;
   height: 810px;
-
+  left: 0px;
+  top: 0px;
   background: linear-gradient(180deg,
       rgba(0, 0, 0, 1) 0%,
       rgba(0, 0, 0, 0) 30%,
       rgba(0, 0, 0, 0) 70%,
       rgba(0, 0, 0, 1) 100%),
-    url("../../../../../assets/images/header/head-acground.png");
-  background-position: center;
+    url("@/assets/images/header/head-acground.png");
+  background-position: center top;
+}
+
+.header {
+  width: 100%;
+  height: 704px;
 }
 
 .headerContent {
   position: absolute;
-  left: 64px;
+  // left: 64px;
   top: 194px;
   width: 650px;
   height: 422px;

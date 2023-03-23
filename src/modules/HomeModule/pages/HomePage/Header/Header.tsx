@@ -2,12 +2,14 @@ import React from "react";
 
 import Navbar from "./Navbar";
 import classes from "./Header.module.scss";
-import MovieTitle from "../../../../../assets/images/header/Wednesday.png";
-import PlayIcon from "../../../../../assets/images/header/Vector.svg";
-import InfoCircle from "../../../../../assets/images/header/info-circle.svg";
+import MovieTitle from "@/assets/images/header/Wednesday.png";
+import PlayIcon from "@/assets/images/header/Vector.svg";
+import InfoCircle from "@/assets/images/header/info-circle.svg";
 
 export const Header: React.FC = () => {
   return (
+    <React.Fragment>
+    <div className={classes.headerContainer}></div>
     <div className={classes.header}>
       <Navbar />
       <div className={classes.headerContent}>
@@ -43,5 +45,6 @@ export const Header: React.FC = () => {
         </div>
       </div>
     </div>
+    </React.Fragment>
   );
 };

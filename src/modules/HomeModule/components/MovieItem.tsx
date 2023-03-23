@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import classes from "./MovieItem.module.scss";
 
 import Play from "@/assets/images/play.svg";
@@ -15,17 +15,23 @@ type AvatarProps = {
 
 const MovieItem: React.FC<AvatarProps> = ({ src, alt }) => {
   const [mouseOn, setMouseOn] = useState(false);
+  const refContainer = useRef<HTMLDivElement>(null);
+  // console.log(refContainer.current?.offsetWidth)
+
+  const widthContainer = refContainer.current?.offsetWidth;
 
   const styleContainter = {
-    zIndex: 20,
+    width: "360px",
+    height: "300px",
+    marginLeft: "-52px",
   };
 
   const styleBottomPanel = {
-    // visibility: 'visible',
+    visibility: "visible",
     opacity: "1",
   };
 
-  const bottomStyle = "Active";
+  const bottomStyle = mouseOn && classes.container__bottomPanelActive;
 
   const mouseEneterHandler = () => {
     setMouseOn(true);
@@ -40,6 +46,7 @@ const MovieItem: React.FC<AvatarProps> = ({ src, alt }) => {
       onMouseEnter={mouseEneterHandler}
       onMouseLeave={mouseLeaveHandler}
       style={mouseOn ? styleContainter : undefined}
+      ref={refContainer}
     >
       <img
         className={classes.image}
@@ -48,9 +55,7 @@ const MovieItem: React.FC<AvatarProps> = ({ src, alt }) => {
         style={mouseOn ? { borderRadius: `16px 16px 0 0` } : undefined}
       />
       <div
-        className={`${classes.container__bottomPanel}${
-          mouseOn ? bottomStyle : ""
-        }`}
+        className={`${classes.container__bottomPanel} ${bottomStyle}`}
       >
         <div className={classes.menuContainer}>
           <div className={`${classes.menu}`}>

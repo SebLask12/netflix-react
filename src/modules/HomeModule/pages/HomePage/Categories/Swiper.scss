@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  background-color: transparent;
 
   h3 {
     width: 291px;
@@ -24,16 +25,34 @@
 .displayAll {
   display: flex;
   align-items: center;
+  text-decoration: underline;
+  cursor: pointer;
+  color: inherit;
 }
 
 .swiper-container {
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  &:hover {
+    z-index: 5;
+  }
 }
 
 .swiper {
   width: 100%;
   overflow: visible;
+  // overflow-x: hidden;
+  // margin-left: 50px;
+}
+
+.swiper-wrapper {
+
+  // width: 100%;
+  &:hover {
+    z-index: 1;
+  }
 }
 
 .swiper-slide {
@@ -45,7 +64,7 @@
   z-index: 10;
 
   &:hover {
-    z-index: 20;
+    z-index: 11;
   }
 }
 

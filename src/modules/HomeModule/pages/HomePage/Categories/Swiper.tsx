@@ -1,7 +1,7 @@
 // Import Swiper React components
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 import "swiper/scss";
 import "./Swiper.scss";
@@ -44,7 +44,11 @@ type Props = {
 };
 
 const Swipe: React.FC<Props> = ({ title }) => {
+  const [leftArrow, setLeftArrow] = useState(false);
   const swiperRef = useRef<SwiperCore>();
+
+const swiper = useSwiper();
+
   const handleClickPrev = () => {
     swiperRef.current?.slidePrev();
   };
@@ -52,13 +56,18 @@ const Swipe: React.FC<Props> = ({ title }) => {
     swiperRef.current?.slideNext();
   };
 
+  if(swiperRef.current?.realIndex > 0) {
+    setLeftArrow(true);
+    console.log(swiperRef.current);
+  }
+
   return (
     <React.Fragment>
       
       <div className="swiper-container">
       <div className="heading">
         <h3>{title}</h3>
-        <a className="displayAll">Zobacz wszystkie <img src={Arrow}/></a>
+        <a href='#' className="displayAll">Zobacz wszystkie <img src={Arrow}/></a>
       </div>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -75,7 +84,7 @@ const Swipe: React.FC<Props> = ({ title }) => {
               <MovieItem src={image.src} alt={image.alt} />
             </SwiperSlide>
           ))}
-          <ButtonMovie opposite={"left"} onClick={handleClickPrev} />
+          <ButtonMovie opposite={"left"} onClick={handleClickPrev} activeLeft={leftArrow}/>
           <ButtonMovie opposite={"right"} onClick={handleClickNext} />
         </Swiper>
       </div>
