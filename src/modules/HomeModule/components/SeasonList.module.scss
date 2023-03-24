@@ -1,5 +1,4 @@
-.list {
-    list-style-type: none;
+.listContainer {
     width: 173px;
     height: 247px;
     background: #242424;
@@ -7,7 +6,47 @@
     border-radius: 12px;
 }
 
+.list {
+    list-style-type: none;
+}
+
 .listElement {
     width: 173px;
     height: 37px;
+
+    &__title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 120%;
+        /* identical to box height, or 17px */
+
+        letter-spacing: -0.01em;
+
+        color: #FFFFFF;
+    }
+
+    &__episode {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        /* or 14px */
+
+        text-align: right;
+        letter-spacing: -0.01em;
+
+        color: #767676;
+    }
+}
+
+.link {
+    color: white;
+    text-decoration: underline;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
 }

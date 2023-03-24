@@ -45,7 +45,7 @@ type Props = {
 
 const Swipe: React.FC<Props> = ({ title }) => {
   const [leftArrow, setLeftArrow] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState<number | undefined>(0);
   const swiperRef = useRef<SwiperCore>();
 
 const swiper = useSwiper();
@@ -61,11 +61,6 @@ const swiper = useSwiper();
     setActiveSlide(swiperRef.current?.realIndex);
     setLeftArrow(true);
   }
-
-  // if(swiperRef?.activeIndex > 0) {
-  //   setLeftArrow(true);
-  //   console.log(swiperRef.current?);
-  // }
 
   return (
     <React.Fragment>
