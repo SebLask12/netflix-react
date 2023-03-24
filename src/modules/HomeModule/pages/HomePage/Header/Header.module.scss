@@ -125,16 +125,18 @@
 
     transition: all .5s;
 
+    cursor: pointer;
+
     &Blurred {
       color: #fff;
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(4px);
       /* Note: backdrop-filter has minimal browser support */
       border-radius: 444px;
-    }
 
-    &:hover {
-      transform: translateY(10px);
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
     }
 
     &+span {

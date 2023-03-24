@@ -53,3 +53,14 @@
     }
   }
 }
+
+@keyframes mount {
+  0% {
+    display: block;
+    opacity: 0;
+  }
+  100%{
+    display: block;
+    opacity: 1;
+  }
+}

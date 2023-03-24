@@ -45,6 +45,7 @@ type Props = {
 
 const Swipe: React.FC<Props> = ({ title }) => {
   const [leftArrow, setLeftArrow] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
   const swiperRef = useRef<SwiperCore>();
 
 const swiper = useSwiper();
@@ -56,14 +57,18 @@ const swiper = useSwiper();
     swiperRef.current?.slideNext();
   };
 
-  if(swiperRef.current?.realIndex > 0) {
+  const onSlideChangeHandler = () => {
+    setActiveSlide(swiperRef.current?.realIndex);
     setLeftArrow(true);
-    console.log(swiperRef.current);
   }
+
+  // if(swiperRef?.activeIndex > 0) {
+  //   setLeftArrow(true);
+  //   console.log(swiperRef.current?);
+  // }
 
   return (
     <React.Fragment>
-      
       <div className="swiper-container">
       <div className="heading">
         <h3>{title}</h3>
@@ -78,6 +83,7 @@ const swiper = useSwiper();
             swiperRef.current = swiper;
           }}
           className="mySwiper"
+          onSlideChange={onSlideChangeHandler}
         >
           {images.map((image, i) => (
             <SwiperSlide key={i}>

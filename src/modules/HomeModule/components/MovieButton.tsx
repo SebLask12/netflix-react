@@ -11,7 +11,7 @@ type Props = {
   activeLeft?: boolean;
 };
 
-const ButtonMovie: React.FC<Props> = ({ opposite, onClick, activeLeft}) => {
+const ButtonMovie: React.FC<Props> = ({ opposite, onClick, activeLeft }) => {
   // const swiperRef = useRef<SwiperCore>();
   const [isClicked, setIsClicked] = useState(false);
   let rotate;
@@ -23,12 +23,17 @@ const ButtonMovie: React.FC<Props> = ({ opposite, onClick, activeLeft}) => {
 
   if (opposite === "left") {
     rotate = 180;
-    if (activeLeft) style = { left: "-52px" };
+    if (activeLeft) style = { left: "-56px", animation: "mount .5s forwards" };
     else {
       style = {
-        left: "-52px",
+        left: "-56px",
         display: "none",
       };
+    }
+  }
+  else {
+    style={
+      right:'-56px'
     }
   }
 
