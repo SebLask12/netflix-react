@@ -26,7 +26,7 @@ const ButtonMovie: React.FC<Props> = ({ opposite, onClick, activeLeft }) => {
     if (activeLeft) style = { left: "-56px", animation: "mount .5s forwards" };
     else {
       style = {
-        left: "-56px",
+        left: "-57px",
         display: "none",
       };
     }
